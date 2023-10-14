@@ -1,8 +1,8 @@
-# Install script for directory: D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/src
+# Install script for directory: D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/AsadHome")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/AsadPassword")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

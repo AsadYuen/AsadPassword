@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/src
-BuildDirectory: D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/build
+SourceDirectory: D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/src
+BuildDirectory: D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +27,7 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "D:/Program Files/CMake/bin/cmake.exe" "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/src"
+ConfigureCommand: "D:/Program Files/CMake/bin/cmake.exe" "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/src"
 MakeCommand: D:/Program\ Files/CMake/bin/cmake.exe --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 

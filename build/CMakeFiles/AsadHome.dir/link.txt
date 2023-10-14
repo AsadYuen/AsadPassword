@@ -1,3 +1,0 @@
-"D:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\AsadHome.dir/objects.a
-D:\mingw64\bin\ar.exe qc CMakeFiles\AsadHome.dir/objects.a @CMakeFiles\AsadHome.dir\objects1.rsp
-D:\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\AsadHome.dir/objects.a -Wl,--no-whole-archive -o AsadHome.exe -Wl,--out-implib,libAsadHome.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\AsadHome.dir\linkLibs.rsp

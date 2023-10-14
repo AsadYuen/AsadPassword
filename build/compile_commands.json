@@ -1,14 +1,14 @@
 [
 {
-  "directory": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/build",
-  "command": "D:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\AsadHome.dir\\my_password.cpp.obj -c \"D:\\Asad Yuen\\Desktop\\AsadYuan\\Project\\AsadHome\\src\\my_password.cpp\"",
-  "file": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/src/my_password.cpp",
-  "output": "CMakeFiles/AsadHome.dir/my_password.cpp.obj"
+  "directory": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/build",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\AsadPassword.dir\\my_password.cpp.obj -c \"D:\\Asad Yuen\\Desktop\\AsadYuan\\Project\\AsadPassword\\src\\my_password.cpp\"",
+  "file": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/src/my_password.cpp",
+  "output": "CMakeFiles/AsadPassword.dir/my_password.cpp.obj"
 },
 {
-  "directory": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/build",
-  "command": "D:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\AsadHome.dir\\main.cpp.obj -c \"D:\\Asad Yuen\\Desktop\\AsadYuan\\Project\\AsadHome\\src\\main.cpp\"",
-  "file": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadHome/src/main.cpp",
-  "output": "CMakeFiles/AsadHome.dir/main.cpp.obj"
+  "directory": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/build",
+  "command": "D:\\mingw64\\bin\\g++.exe   -g -o CMakeFiles\\AsadPassword.dir\\main.cpp.obj -c \"D:\\Asad Yuen\\Desktop\\AsadYuan\\Project\\AsadPassword\\src\\main.cpp\"",
+  "file": "D:/Asad Yuen/Desktop/AsadYuan/Project/AsadPassword/src/main.cpp",
+  "output": "CMakeFiles/AsadPassword.dir/main.cpp.obj"
 }
 ]
