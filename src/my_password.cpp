@@ -41,7 +41,7 @@ void password::decrypt()
 	}
 }
 
-void passwordImport(int &numberOfPasswords, password passwordArray[])
+void import(int &numberOfPasswords, password passwordArray[])
 {
 	ifstream inFile;
 	inFile.open("password.asad");
@@ -61,7 +61,7 @@ void passwordImport(int &numberOfPasswords, password passwordArray[])
 	inFile.close();
 }
 
-void passwordList(int &numberOfPasswords, password passwordArray[])
+void list(int &numberOfPasswords, password passwordArray[])
 {
 	system("cls");
 
@@ -74,7 +74,7 @@ void passwordList(int &numberOfPasswords, password passwordArray[])
 	}
 }
 
-void passwordAdd(int &numberOfPasswords, password passwordArray[])
+void add(int &numberOfPasswords, password passwordArray[])
 {
 	system("cls");
 
@@ -96,11 +96,11 @@ void passwordAdd(int &numberOfPasswords, password passwordArray[])
 	cout << "Added successfully!";
 }
 
-void passwordChange(int &numberOfPasswords, password passwordArray[])
+void change(int &numberOfPasswords, password passwordArray[])
 {
 	system("cls");
 
-	passwordList(numberOfPasswords, passwordArray);
+	list(numberOfPasswords, passwordArray);
 
 	cout << "Please enter the password number that needs to be changed: ";
 
@@ -116,7 +116,7 @@ void passwordChange(int &numberOfPasswords, password passwordArray[])
 	cout << "Successfully modified!";
 }
 
-void passwordRemove(int &numberOfPasswords, password passwordArray[])
+void remove(int &numberOfPasswords, password passwordArray[])
 {
 	system("cls");
 

@@ -24,7 +24,7 @@ bool masterPassword()
 
 void home()
 {
-	if(!numberOfPasswords) passwordImport(numberOfPasswords, passwordArray);
+	if(!numberOfPasswords) import(numberOfPasswords, passwordArray);
 
 	system("cls");
 	cout << "Please enter a number to perform the corresponding operation:\n";
@@ -39,16 +39,16 @@ void home()
 	switch (number)
 	{
 	case 1:
-		passwordList(numberOfPasswords, passwordArray);
+		list(numberOfPasswords, passwordArray);
 		break;
 	case 2:
-		passwordAdd(numberOfPasswords, passwordArray);
+		add(numberOfPasswords, passwordArray);
 		break;
 	case 3:
-		passwordChange(numberOfPasswords, passwordArray);
+		change(numberOfPasswords, passwordArray);
 		break;
 	case 4:
-		passwordRemove(numberOfPasswords, passwordArray);
+		remove(numberOfPasswords, passwordArray);
 		break;
 	default:
 		break;
