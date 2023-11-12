@@ -17,7 +17,7 @@ void passwordList(int &numberOfPasswords, password passwordArray[]);
 void passwordAdd(int &numberOfPasswords, password passwordArray[]);
 void passwordChange(int &numberOfPasswords, password passwordArray[]);
 void passwordRemove(int &numberOfPasswords, password passwordArray[]);
-void passwordHome(int &numberOfPasswords, password passwordArray[]);
-void passwordExport(int &numberOfPasswords, password passwordArray[]);
+// void passwordHome(int &numberOfPasswords, password passwordArray[]);
+// void passwordExport(int &numberOfPasswords, password passwordArray[]);
 
 #endif

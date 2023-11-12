@@ -134,59 +134,59 @@ void passwordRemove(int &numberOfPasswords, password passwordArray[])
 	cout << "Successfully deleted!";
 }
 
-void passwordHome(int &numberOfPasswords, password passwordArray[])
-{
-	if(!numberOfPasswords) passwordImport(numberOfPasswords, passwordArray);
+// void passwordHome(int &numberOfPasswords, password passwordArray[])
+// {
+// 	if(!numberOfPasswords) passwordImport(numberOfPasswords, passwordArray);
 
-	system("cls");
-	cout << "Please enter a number to perform the corresponding operation:\n";
-	cout << "1.List Password\n";
-	cout << "2.Add Password\n";
-	cout << "3.Change Password\n";
-	cout << "4.Remove Password\n";
-	cout << "5.Go Back\n";
+// 	system("cls");
+// 	cout << "Please enter a number to perform the corresponding operation:\n";
+// 	cout << "1.List Password\n";
+// 	cout << "2.Add Password\n";
+// 	cout << "3.Change Password\n";
+// 	cout << "4.Remove Password\n";
+// 	cout << "5.Go Back\n";
 
-	int number;
-	cin >> number;
-	switch (number)
-	{
-	case 1:
-		passwordList(numberOfPasswords, passwordArray);
-		break;
-	case 2:
-		passwordAdd(numberOfPasswords, passwordArray);
-		break;
-	case 3:
-		passwordChange(numberOfPasswords, passwordArray);
-		break;
-	case 4:
-		passwordRemove(numberOfPasswords, passwordArray);
-		break;
-	default:
-		break;
-	}
+// 	int number;
+// 	cin >> number;
+// 	switch (number)
+// 	{
+// 	case 1:
+// 		passwordList(numberOfPasswords, passwordArray);
+// 		break;
+// 	case 2:
+// 		passwordAdd(numberOfPasswords, passwordArray);
+// 		break;
+// 	case 3:
+// 		passwordChange(numberOfPasswords, passwordArray);
+// 		break;
+// 	case 4:
+// 		passwordRemove(numberOfPasswords, passwordArray);
+// 		break;
+// 	default:
+// 		break;
+// 	}
 
-	char operation = _getch();
+// 	char operation = _getch();
 
-	if (operation != 'q') passwordHome(numberOfPasswords, passwordArray);
-}
+// 	if (operation != 'q') passwordHome(numberOfPasswords, passwordArray);
+// }
 
-void passwordExport(int &numberOfPasswords, password passwordArray[])
-{
-	ofstream outFile;
-	outFile.open("password.asad");
+// void passwordExport(int &numberOfPasswords, password passwordArray[])
+// {
+// 	ofstream outFile;
+// 	outFile.open("password.asad");
 
-	outFile << numberOfPasswords << endl;
+// 	outFile << numberOfPasswords << endl;
 
-	for (int i = 1; i <= numberOfPasswords; i++)
-	{
-		passwordArray[i].encrypt();
+// 	for (int i = 1; i <= numberOfPasswords; i++)
+// 	{
+// 		passwordArray[i].encrypt();
 
-		outFile << passwordArray[i].platform << ' ';
-		outFile << passwordArray[i].userName << ' ';
-		outFile << passwordArray[i].password << ' ';
-		outFile << passwordArray[i].key << endl;
-	}
+// 		outFile << passwordArray[i].platform << ' ';
+// 		outFile << passwordArray[i].userName << ' ';
+// 		outFile << passwordArray[i].password << ' ';
+// 		outFile << passwordArray[i].key << endl;
+// 	}
 
-	outFile.close();
-}
+// 	outFile.close();
+// }
