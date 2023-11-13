@@ -61,7 +61,12 @@ void import(int &numberOfPasswords, password passwordArray[])
 	inFile.close();
 }
 
-void list(int &numberOfPasswords, password passwordArray[])
+void passwordSort(int &numberOfPasswords, password passwordArray[])
+{
+
+}
+
+void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	system("cls");
 
@@ -74,7 +79,7 @@ void list(int &numberOfPasswords, password passwordArray[])
 	}
 }
 
-void add(int &numberOfPasswords, password passwordArray[])
+void add(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	system("cls");
 
@@ -93,14 +98,16 @@ void add(int &numberOfPasswords, password passwordArray[])
 		cin >> passwordArray[numberOfPasswords].password;
 	}
 
+	sortFlag = 0;
+
 	cout << "Added successfully!";
 }
 
-void change(int &numberOfPasswords, password passwordArray[])
+void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	system("cls");
 
-	list(numberOfPasswords, passwordArray);
+	list(numberOfPasswords, passwordArray, sortFlag);
 
 	cout << "Please enter the password number that needs to be changed: ";
 

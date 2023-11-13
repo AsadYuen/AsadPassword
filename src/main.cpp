@@ -8,6 +8,7 @@ using namespace std;
 
 int numberOfPasswords;
 password passwordArray[110];
+bool sortFlag = 1;
 
 bool masterPassword()
 {
@@ -39,13 +40,13 @@ void home()
 	switch (number)
 	{
 	case 1:
-		list(numberOfPasswords, passwordArray);
+		list(numberOfPasswords, passwordArray, sortFlag);
 		break;
 	case 2:
-		add(numberOfPasswords, passwordArray);
+		add(numberOfPasswords, passwordArray, sortFlag);
 		break;
 	case 3:
-		change(numberOfPasswords, passwordArray);
+		change(numberOfPasswords, passwordArray, sortFlag);
 		break;
 	case 4:
 		remove(numberOfPasswords, passwordArray);
