@@ -11,10 +11,10 @@ public:
 	void encrypt();
 	void decrypt();
 };
-void import(int &numberOfPasswords, password passwordArray[]);
-void list(int &numberOfPasswords, password passwordArray[]);
-void add(int &numberOfPasswords, password passwordArray[]);
-void change(int &numberOfPasswords, password passwordArray[]);
-void remove(int &numberOfPasswords, password passwordArray[]);
+void import(int &num, password a[]);
+void list(int &num, password a[]);
+void add(int &num, password a[]);
+void change(int &num, password a[]);
+void remove(int &num, password a[]);
 
 #endif

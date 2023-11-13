@@ -6,8 +6,8 @@
 
 using namespace std;
 
-int numberOfPasswords;
-password passwordArray[110];
+int num;
+password a[110];
 
 bool masterPassword()
 {
@@ -24,7 +24,7 @@ bool masterPassword()
 
 void home()
 {
-	if(!numberOfPasswords) import(numberOfPasswords, passwordArray);
+	if(!num) import(num, a);
 
 	system("cls");
 	cout << "Please enter a number to perform the corresponding operation:\n";
@@ -39,16 +39,16 @@ void home()
 	switch (number)
 	{
 	case 1:
-		list(numberOfPasswords, passwordArray);
+		list(num, a);
 		break;
 	case 2:
-		add(numberOfPasswords, passwordArray);
+		add(num, a);
 		break;
 	case 3:
-		change(numberOfPasswords, passwordArray);
+		change(num, a);
 		break;
 	case 4:
-		remove(numberOfPasswords, passwordArray);
+		remove(num, a);
 		break;
 	default:
 		break;
@@ -64,16 +64,16 @@ void Export()
 	ofstream outFile;
 	outFile.open("password.asad");
 
-	outFile << numberOfPasswords << endl;
+	outFile << num << endl;
 
-	for (int i = 1; i <= numberOfPasswords; i++)
+	for (int i = 1; i <= num; i++)
 	{
-		passwordArray[i].encrypt();
+		a[i].encrypt();
 
-		outFile << passwordArray[i].platform << ' ';
-		outFile << passwordArray[i].userName << ' ';
-		outFile << passwordArray[i].password << ' ';
-		outFile << passwordArray[i].key << endl;
+		outFile << a[i].platform << ' ';
+		outFile << a[i].userName << ' ';
+		outFile << a[i].password << ' ';
+		outFile << a[i].key << endl;
 	}
 
 	outFile.close();

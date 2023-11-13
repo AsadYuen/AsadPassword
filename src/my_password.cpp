@@ -41,40 +41,40 @@ void password::decrypt()
 	}
 }
 
-void import(int &numberOfPasswords, password passwordArray[])
+void import(int &num, password a[])
 {
 	ifstream inFile;
 	inFile.open("password.asad");
 
-	inFile >> numberOfPasswords;
+	inFile >> num;
 
-	for (int i = 1; i <= numberOfPasswords; i++)
+	for (int i = 1; i <= num; i++)
 	{
-		inFile >> passwordArray[i].platform;
-		inFile >> passwordArray[i].userName;
-		inFile >> passwordArray[i].password;
-		inFile >> passwordArray[i].key;
+		inFile >> a[i].platform;
+		inFile >> a[i].userName;
+		inFile >> a[i].password;
+		inFile >> a[i].key;
 
-		passwordArray[i].decrypt();
+		a[i].decrypt();
 	}
 
 	inFile.close();
 }
 
-void list(int &numberOfPasswords, password passwordArray[])
+void list(int &num, password a[])
 {
 	system("cls");
 
-	for (int i = 1; i <= numberOfPasswords; i++)
+	for (int i = 1; i <= num; i++)
 	{
 		cout << i << ": ";
-		cout << passwordArray[i].platform << ' ';
-		cout << passwordArray[i].userName << ' ';
-		cout << passwordArray[i].password << endl;
+		cout << a[i].platform << ' ';
+		cout << a[i].userName << ' ';
+		cout << a[i].password << endl;
 	}
 }
 
-void add(int &numberOfPasswords, password passwordArray[])
+void add(int &num, password a[])
 {
 	system("cls");
 
@@ -88,19 +88,19 @@ void add(int &numberOfPasswords, password passwordArray[])
 	for (int i = 1; i <= number; i++)
 	{
 		cout << i << ": ";
-		cin >> passwordArray[++numberOfPasswords].platform;
-		cin >> passwordArray[numberOfPasswords].userName;
-		cin >> passwordArray[numberOfPasswords].password;
+		cin >> a[++num].platform;
+		cin >> a[num].userName;
+		cin >> a[num].password;
 	}
 
 	cout << "Added successfully!";
 }
 
-void change(int &numberOfPasswords, password passwordArray[])
+void change(int &num, password a[])
 {
 	system("cls");
 
-	list(numberOfPasswords, passwordArray);
+	list(num, a);
 
 	cout << "Please enter the password number that needs to be changed: ";
 
@@ -109,14 +109,14 @@ void change(int &numberOfPasswords, password passwordArray[])
 
 	cout << "Please enter the platform, username and password in sequence:\n";
 
-	cin >> passwordArray[number].platform;
-	cin >> passwordArray[number].userName;
-	cin >> passwordArray[number].password;
+	cin >> a[number].platform;
+	cin >> a[number].userName;
+	cin >> a[number].password;
 
 	cout << "Successfully modified!";
 }
 
-void remove(int &numberOfPasswords, password passwordArray[])
+void remove(int &num, password a[])
 {
 	system("cls");
 
@@ -125,11 +125,11 @@ void remove(int &numberOfPasswords, password passwordArray[])
 	int number;
 	cin >> number;
 
-	for (int i = number; i < numberOfPasswords; i++)
+	for (int i = number; i < num; i++)
 	{
-		passwordArray[i] = passwordArray[i + 1];
+		a[i] = a[i + 1];
 	}
-	numberOfPasswords--;
+	num--;
 
 	cout << "Successfully deleted!";
 }
