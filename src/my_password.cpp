@@ -63,7 +63,7 @@ void import(int &numberOfPasswords, password passwordArray[])
 
 void passwordSort(int &numberOfPasswords, password passwordArray[])
 {
-
+	
 }
 
 void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
