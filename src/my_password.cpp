@@ -3,6 +3,7 @@
 #include <fstream>
 #include <conio.h>
 #include <ctime>
+#include <algorithm>
 
 using namespace std;
 
@@ -41,7 +42,12 @@ void password::decrypt()
 	}
 }
 
-void import(int &numberOfPasswords, password passwordArray[])
+bool cmp(password a, password b)
+{
+	return a.platform < b.platform;
+}
+
+void import(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	ifstream inFile;
 	inFile.open("password.asad");
@@ -58,16 +64,24 @@ void import(int &numberOfPasswords, password passwordArray[])
 		passwordArray[i].decrypt();
 	}
 
+	inFile >> sortFlag;
+
 	inFile.close();
 }
 
 void passwordSort(int &numberOfPasswords, password passwordArray[])
 {
-	
+	sort(passwordArray + 1, passwordArray + numberOfPasswords + 1, cmp);
 }
 
 void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
+	if (!sortFlag)
+	{
+		passwordSort(numberOfPasswords, passwordArray);
+		sortFlag = true;
+	}
+
 	system("cls");
 
 	for (int i = 1; i <= numberOfPasswords; i++)
@@ -75,7 +89,7 @@ void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 		cout << i << ": ";
 		cout << passwordArray[i].platform << ' ';
 		cout << passwordArray[i].userName << ' ';
-		cout << passwordArray[i].password << endl;
+		cout << passwordArray[i].password << '\n';
 	}
 }
 
@@ -98,7 +112,7 @@ void add(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 		cin >> passwordArray[numberOfPasswords].password;
 	}
 
-	sortFlag = 0;
+	sortFlag = false;
 
 	cout << "Added successfully!";
 }
@@ -119,6 +133,8 @@ void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 	cin >> passwordArray[number].platform;
 	cin >> passwordArray[number].userName;
 	cin >> passwordArray[number].password;
+
+	sortFlag = false;
 
 	cout << "Successfully modified!";
 }

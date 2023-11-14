@@ -11,7 +11,9 @@ public:
 	void encrypt();
 	void decrypt();
 };
-void import(int &numberOfPasswords, password passwordArray[]);
+
+bool cmp(password a, password b);
+void import(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
 void passwordSort(int &numberOfPasswords, password passwordArray[]);
 void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
 void add(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
