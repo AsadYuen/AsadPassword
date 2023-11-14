@@ -123,20 +123,57 @@ void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 
 	list(numberOfPasswords, passwordArray, sortFlag);
 
-	cout << "Please enter the password number that needs to be changed: ";
+	cout << "Please enter the number of passwords you need to modify: ";
 
 	int number;
 	cin >> number;
 
-	cout << "Please enter the platform, username and password in sequence:\n";
+	for (int i = 1; i <= number; i++)
+	{
+		cout << "Please enter the serial number of the password that needs to be modified: ";
 
-	cin >> passwordArray[number].platform;
-	cin >> passwordArray[number].userName;
-	cin >> passwordArray[number].password;
+		int serialNumber;
+		cin >> serialNumber;
 
-	sortFlag = false;
+		cout << "Please enter the number in the form you expect to modify the password:\n";
+		cout << "1.Change password only\n";
+		cout << "2.Change username only\n";
+		cout << "3.Modify both of the above\n";
+		cout << "4.Modify All\n";
 
-	cout << "Successfully modified!";
+		int operation;
+		cin >> operation;
+		switch (operation)
+		{
+		case 1:
+			cout << "Please enter the new password: ";
+			cin >> passwordArray[serialNumber].password;
+			break;
+		case 2:
+			cout << "Please enter the new username: ";
+			cin >> passwordArray[serialNumber].userName;
+			break;
+		case 3:
+			cout << "Please enter the new username: ";
+			cin >> passwordArray[serialNumber].userName;
+			cout << "Please enter the new password: ";
+			cin >> passwordArray[serialNumber].password;
+			break;
+		case 4:
+			cout << "Please enter the new platform: ";
+			cin >> passwordArray[serialNumber].platform;
+			cout << "Please enter the new username: ";
+			cin >> passwordArray[serialNumber].userName;
+			cout << "Please enter the new password: ";
+			cin >> passwordArray[serialNumber].password;
+			sortFlag = false;
+			break;
+		default:
+			break;
+		}
+	}
+
+	cout << "All passwords have been successfully modified!";
 }
 
 void remove(int &numberOfPasswords, password passwordArray[])
