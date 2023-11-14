@@ -13,6 +13,7 @@ public:
 };
 
 bool cmp(password a, password b);
+
 void import(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
 void passwordSort(int &numberOfPasswords, password passwordArray[]);
 void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
