@@ -8,6 +8,7 @@ using namespace std;
 
 int numberOfPasswords;
 password passwordArray[110];
+
 bool sortFlag;
 
 bool masterPassword()
