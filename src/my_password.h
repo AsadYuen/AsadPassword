@@ -19,6 +19,6 @@ void passwordSort(int &numberOfPasswords, password passwordArray[]);
 void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
 void add(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
 void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
-void remove(int &numberOfPasswords, password passwordArray[]);
+void remove(int &numberOfPasswords, password passwordArray[], bool &sortFlag);
 
 #endif

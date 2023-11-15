@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <ctime>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
@@ -143,11 +144,26 @@ void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 
 		int operation;
 		cin >> operation;
+		string temporaryPassword1, temporaryPassword2;
 		switch (operation)
 		{
 		case 1:
-			cout << "Please enter the new password: ";
-			cin >> passwordArray[serialNumber].password;
+			while (1)
+			{
+				cout << "Please enter the new password: ";
+				cin >> temporaryPassword1;
+				cout << "Please enter the password again: ";
+				cin >> temporaryPassword2;
+				if (temporaryPassword1 == temporaryPassword2)
+				{
+					passwordArray[serialNumber].password = temporaryPassword1;
+					break;
+				}
+				else
+				{
+					cout << "The two passwords are different!\n";
+				}
+			}
 			break;
 		case 2:
 			cout << "Please enter the new username: ";
@@ -156,16 +172,44 @@ void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 		case 3:
 			cout << "Please enter the new username: ";
 			cin >> passwordArray[serialNumber].userName;
-			cout << "Please enter the new password: ";
-			cin >> passwordArray[serialNumber].password;
+			while (1)
+			{
+				cout << "Please enter the new password: ";
+				cin >> temporaryPassword1;
+				cout << "Please enter the password again: ";
+				cin >> temporaryPassword2;
+				if (temporaryPassword1 == temporaryPassword2)
+				{
+					passwordArray[serialNumber].password = temporaryPassword1;
+					break;
+				}
+				else
+				{
+					cout << "The two passwords are different!\n";
+				}
+			}
 			break;
 		case 4:
 			cout << "Please enter the new platform: ";
 			cin >> passwordArray[serialNumber].platform;
 			cout << "Please enter the new username: ";
 			cin >> passwordArray[serialNumber].userName;
-			cout << "Please enter the new password: ";
-			cin >> passwordArray[serialNumber].password;
+			while (1)
+			{
+				cout << "Please enter the new password: ";
+				cin >> temporaryPassword1;
+				cout << "Please enter the password again: ";
+				cin >> temporaryPassword2;
+				if (temporaryPassword1 == temporaryPassword2)
+				{
+					passwordArray[serialNumber].password = temporaryPassword1;
+					break;
+				}
+				else
+				{
+					cout << "The two passwords are different!\n";
+				}
+			}
 			sortFlag = false;
 			break;
 		default:
@@ -176,20 +220,30 @@ void change(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 	cout << "All passwords have been successfully modified!";
 }
 
-void remove(int &numberOfPasswords, password passwordArray[])
+void remove(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	system("cls");
 
-	cout << "Please enter the password number that needs to be deleted:\n";
+	list(numberOfPasswords, passwordArray, sortFlag);
+
+	cout << "Please enter the number of passwords to delete: ";
 
 	int number;
 	cin >> number;
 
-	for (int i = number; i < numberOfPasswords; i++)
+	for (int i = 1; i <= number; i++)
 	{
-		passwordArray[i] = passwordArray[i + 1];
-	}
-	numberOfPasswords--;
+		cout << "Please enter the number of the password you want to delete: ";
 
-	cout << "Successfully deleted!";
+		int serialNumber;
+		cin >> serialNumber;
+
+		passwordArray[serialNumber] = passwordArray[numberOfPasswords];
+
+		numberOfPasswords--;
+	}
+
+	sortFlag = false;
+
+	cout << "All passwords have been successfully deleted!";
 }

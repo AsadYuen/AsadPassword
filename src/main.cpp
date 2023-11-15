@@ -50,7 +50,7 @@ void home()
 		change(numberOfPasswords, passwordArray, sortFlag);
 		break;
 	case 4:
-		remove(numberOfPasswords, passwordArray);
+		remove(numberOfPasswords, passwordArray, sortFlag);
 		break;
 	default:
 		break;
