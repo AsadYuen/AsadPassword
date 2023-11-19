@@ -48,6 +48,11 @@ bool cmp(password a, password b)
 	return a.platform < b.platform;
 }
 
+void Sort(int &numberOfPasswords, password passwordArray[])
+{
+	sort(passwordArray + 1, passwordArray + numberOfPasswords + 1, cmp);
+}
+
 void import(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	ifstream inFile;
@@ -70,16 +75,11 @@ void import(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 	inFile.close();
 }
 
-void passwordSort(int &numberOfPasswords, password passwordArray[])
-{
-	sort(passwordArray + 1, passwordArray + numberOfPasswords + 1, cmp);
-}
-
 void list(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 {
 	if (!sortFlag)
 	{
-		passwordSort(numberOfPasswords, passwordArray);
+		Sort(numberOfPasswords, passwordArray);
 		sortFlag = true;
 	}
 
@@ -246,4 +246,26 @@ void remove(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 	sortFlag = false;
 
 	cout << "All passwords have been successfully deleted!";
+}
+
+void Export(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
+{
+	ofstream outFile;
+	outFile.open("password.asad");
+
+	outFile << numberOfPasswords << '\n';
+
+	for (int i = 1; i <= numberOfPasswords; i++)
+	{
+		passwordArray[i].encrypt();
+
+		outFile << passwordArray[i].platform << ' ';
+		outFile << passwordArray[i].userName << ' ';
+		outFile << passwordArray[i].password << ' ';
+		outFile << passwordArray[i].key << '\n';
+	}
+
+	outFile << sortFlag << '\n';
+
+	outFile.close();
 }

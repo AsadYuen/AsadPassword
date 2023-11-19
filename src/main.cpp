@@ -61,34 +61,12 @@ void home()
 	if (operation != 'q') home();
 }
 
-void Export()
-{
-	ofstream outFile;
-	outFile.open("password.asad");
-
-	outFile << numberOfPasswords << '\n';
-
-	for (int i = 1; i <= numberOfPasswords; i++)
-	{
-		passwordArray[i].encrypt();
-
-		outFile << passwordArray[i].platform << ' ';
-		outFile << passwordArray[i].userName << ' ';
-		outFile << passwordArray[i].password << ' ';
-		outFile << passwordArray[i].key << '\n';
-	}
-
-	outFile << sortFlag << '\n';
-
-	outFile.close();
-}
-
 int main()
 {
 	if (!masterPassword()) return 0;
 
 	home();
 
-	Export();
+	Export(numberOfPasswords, passwordArray, sortFlag);
 	return 0;
 }
