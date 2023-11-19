@@ -233,7 +233,7 @@ void remove(int &numberOfPasswords, password passwordArray[], bool &sortFlag)
 
 	for (int i = 1; i <= number; i++)
 	{
-		cout << "Please enter the number of the password you want to delete: ";
+		cout << i << ": ";
 
 		int serialNumber;
 		cin >> serialNumber;
